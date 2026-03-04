@@ -1,0 +1,251 @@
+/* Base */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #DAE0E6; /* Le gris classique de Reddit */
+  color: #1c1c1c;
+}
+
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 15px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #FF4500;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-badge {
+  background: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Formulaires */
+form {
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid #ccc;
+}
+
+input, textarea {
+  padding: 12px;
+  border: 1px solid #edeff1;
+  border-radius: 4px;
+  background: #f6f7f8;
+  font-family: inherit;
+  font-size: 1em;
+  transition: border 0.2s, background 0.2s;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  background: white;
+  border-color: #0079d3;
+}
+
+button[type="submit"] {
+  padding: 10px 15px;
+  border: none;
+  background-color: #0079D3; /* Bleu Reddit pour les actions principales */
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: #1484d6;
+}
+
+/* Post Card */
+.post {
+  background: white;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  display: flex; /* Permet de mettre les votes à gauche */
+  overflow: hidden;
+  transition: border 0.2s;
+}
+
+.post:hover {
+  border-color: #898989;
+}
+
+/* Sidebar des votes */
+.vote-sidebar {
+  background-color: #F8F9FA;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40px;
+  border-right: 1px solid #edeff1;
+}
+
+.vote-sidebar button {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  color: #878A8C;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.vote-sidebar button:hover { background-color: #E8E8E8; }
+.vote-sidebar .upvote:hover { color: #FF4500; }
+.vote-sidebar .downvote:hover { color: #7193FF; }
+
+.score {
+  font-weight: bold;
+  font-size: 0.9em;
+  margin: 5px 0;
+  color: #1A1A1B;
+}
+
+/* Contenu du Post */
+.post-content-area {
+  padding: 10px 15px;
+  flex: 1;
+}
+
+.post-meta {
+  font-size: 0.75em;
+  color: #787C7E;
+  margin-bottom: 8px;
+}
+
+.post-meta .author {
+  font-weight: bold;
+  color: #1A1A1B;
+}
+
+.post-title {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.post-text {
+  margin: 0 0 15px 0;
+  font-size: 0.9em;
+  line-height: 1.5;
+  color: #1c1c1c;
+}
+
+/* Boutons d'action (Commentaires, Supprimer) */
+.post-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.action-btn {
+  background: transparent;
+  border: none;
+  color: #878A8C;
+  font-weight: bold;
+  font-size: 0.75em;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.action-btn:hover {
+  background: #E8E8E8;
+}
+
+.delete-btn:hover {
+  color: #FF4500;
+}
+
+/* Section Commentaires */
+.comments-section {
+  margin-top: 15px;
+  border-top: 1px solid #edeff1;
+  padding-top: 15px;
+}
+
+.comment-form {
+  padding: 0;
+  border: none;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+
+.comment-form input {
+  flex: 1;
+}
+
+.comment {
+  padding: 10px 0 10px 15px;
+  border-left: 2px solid #edeff1;
+  margin-top: 10px;
+  font-size: 0.9em;
+  position: relative;
+}
+
+.comment-meta {
+  font-size: 0.85em;
+  margin-bottom: 5px;
+}
+
+.comment-meta strong {
+  color: #1A1A1B;
+}
+
+.comment-meta .date {
+  color: #787C7E;
+}
+
+.comment-text {
+  margin: 0;
+  color: #1c1c1c;
+}
+
+.delete-comment-btn {
+  background: none;
+  border: none;
+  color: #FF4500;
+  font-size: 0.75em;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 5px;
+}
+
+.delete-comment-btn:hover {
+  text-decoration: underline;
+}
+
+.no-comments {
+  color: #878A8C;
+  font-size: 0.9em;
+  font-style: italic;
+}
